@@ -1,0 +1,28 @@
+SentinelX/
+
+├── core/              (Go)
+│   ├── scanner.go
+│   ├── parser.go
+│   ├── engine.go
+│
+├── plugins/           (Python)
+│   ├── network/
+│   │   ├── port_analysis.py
+│   │   ├── service_fingerprint.py
+│   ├── mobile/
+│   │   ├── apk_analyzer.py
+│   │   ├── firmware_info.py
+│   ├── forensic/
+│       ├── log_analyzer.py
+│       ├── hash_identifier.py
+│
+├── scripts/           (Bash)
+│   ├── env_check.sh
+│   ├── dependency_check.sh
+│
+├── reports/
+│   ├── html/
+│   ├── json/
+│
+├── sentinelx.go
+└── README.md
