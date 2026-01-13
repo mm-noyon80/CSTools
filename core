@@ -1,0 +1,28 @@
+// core/main.go
+package main
+
+import (
+	"flag"
+	"fmt"
+	"os"
+)
+
+func main() {
+	target := flag.String("target", "", "Target domain or IP")
+	confirm := flag.Bool("i-have-permission", false, "Legal confirmation")
+	jsonOut := flag.Bool("json", false, "Generate JSON report")
+	flag.Parse()
+
+	if !*confirm {
+		fmt.Println("[!] Legal confirmation required: --i-have-permission")
+		os.Exit(1)
+	}
+
+	if *target == "" {
+		fmt.Println("[!] Target missing")
+		os.Exit(1)
+	}
+
+	fmt.Println("[*] AegisX Ethical Scan Started:", *target)
+	RunScan(*target, *jsonOut)
+}
