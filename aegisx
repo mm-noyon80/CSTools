@@ -1,0 +1,15 @@
+aegisx/
+├── core/                 # Go (fast engine)
+│   ├── main.go
+│   ├── scanner.go
+│   ├── report.go
+│
+├── plugins/              # Python (analysis layer)
+│   ├── network_web.py
+│
+├── scripts/
+│   └── install.sh        # One-command setup
+│
+├── reports/
+│
+└── aegisx                # compiled binary
