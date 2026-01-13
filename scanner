@@ -1,0 +1,18 @@
+// core/scanner.go
+package main
+
+import (
+	"fmt"
+	"os/exec"
+)
+
+func RunScan(target string, json bool) {
+	fmt.Println("[+] Checking open ports")
+
+	cmd := exec.Command("nmap", "-T4", "-F", target)
+	out, _ := cmd.CombinedOutput()
+	fmt.Println(string(out))
+
+	fmt.Println("[+] Running web analysis plugin")
+	exec.Command("python3", "plugins/network_web.py", target).Run()
+}
